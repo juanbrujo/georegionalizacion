@@ -25,7 +25,6 @@ Uso avanzado:
 -------
 	$('#region-avanzado').geoRegionalizacion({
    		regionDependiente: '#comuna-avanzado',
-   		regionDependiente: '#comuna-avanzado',
       	onRegionSelect: function(){
       		console.log($(this).val());
    		},
