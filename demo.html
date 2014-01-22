@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title></title>
+	<link rel="stylesheet" href="css/demo.css">
+	<link rel="stylesheet" href="libs/selectric.css">
+</head>
+
+<body>
+
+	<div class="container">
+		<h1>jQuery geoRegionalización</h1>
+		<p>Este sencillo plugin permite generar dependencia entre 2 &lt;select&gt; y entre ellos mostrar la relación region / comuna que conforma la distribución geopolítica de la República de Chile.</p>
+
+		<h3>demo base:</h3>
+
+		<pre>
+			<code>
+$('#region').geoRegionalizacion({
+   regionDependiente: '#comuna',
+   onRegionSelect: function(){
+      console.log($(this).val());
+   },
+   onComunaSelect: function() {
+      console.log($(this).val());
+   }
+});
+			</code>
+		</pre>
+		
+		<fieldset>
+			<label>Región: </label>
+			<select id="region">
+				<option value="">Seleccione</option>
+			</select>
+			
+			<label>Comuna: </label>
+			<select id="comuna">
+				<option value="">Seleccione</option>
+			</select>
+		</fieldset>
+
+		<h3>demo avanzado:</h3>
+
+		<pre>
+			<code>
+$('#region-avanzado').geoRegionalizacion({
+   regionDependiente: '#comuna-avanzado',
+   onCreate: function(){
+      $('#region-avanzado, #comuna-avanzado').selectric('refresh');
+   }
+});
+			</code>
+		</pre>
+		<fieldset>
+			<label>Región: </label>
+			<select id="region-avanzado">
+				<option value="">Seleccione Región</option>
+			</select>
+			
+			<label>Comuna: </label>
+			<select id="comuna-avanzado">
+				<option value="">Seleccione Comuna</option>
+			</select>
+		</fieldset>
+	</div>
+
+	
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="libs/jquery.selectric.min.js"></script>
+	<script src="jquery.georegionalizacion-chile_0.7.min.js"></script>
+	<script>
+
+		$('#region').geoRegionalizacion({
+			regionDependiente: '#comuna',
+			onRegionSelect: function(){
+				console.log($(this).val());
+			},
+			onComunaSelect: function() {
+				console.log($(this).val());
+			}
+		});
+		$('#region-avanzado').geoRegionalizacion({
+			regionDependiente: '#comuna-avanzado',
+			onCreate: function(){
+				$('#region-avanzado, #comuna-avanzado').selectric('refresh');
+			}
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+
+html,body {height:100%;}
+body {
+	font-size: 16px;
+	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	color: #ecf0f1;
+	text-shadow: #333 1px 1px 1px;
+	background: #6e529d;
+	background: -moz-linear-gradient(-45deg, #6e529d 0%, #d97b93 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#6e529d), color-stop(100%,#d97b93));
+	background: -webkit-linear-gradient(-45deg, #6e529d 0%,#d97b93 100%);
+	background: -o-linear-gradient(-45deg, #6e529d 0%,#d97b93 100%);
+	background: -ms-linear-gradient(-45deg, #6e529d 0%,#d97b93 100%);
+	background: linear-gradient(135deg, #6e529d 0%,#d97b93 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6e529d', endColorstr='#d97b93',GradientType=1 );
+}
+
+.container {
+	width: 60em;
+	margin: 3em auto;
+}
+fieldset {
+	width: 34%;
+	float: right;
+	padding: 0;
+	border: 0;
+}
+fieldset:first-of-type label {
+	float: left;
+	clear: left;
+	display: block;
+	width: 100px;
+}
+fieldset:first-of-type select {
+	float: left;
+}
+pre {
+	width: 65%;
+	float: left;
+	font-size: .8em;
+}
+h1,h2,h3 {
+	clear: both;
+	border-bottom: 1px solid rgba(255,255,255,.1);
+	color: #fff;
+}
