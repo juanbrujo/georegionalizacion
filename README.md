@@ -18,19 +18,20 @@ HTML base:
 Uso base:
 -------
 	$('#region').geoRegionalizacion({
-   		regionDependiente: '#comuna',
-   		onRegionSelect: function(){
-      		console.log($(this).val());
-   		},
-   		onComunaSelect: function() {
-      		console.log($(this).val());
-   		}
+   		regionDependiente: '#comuna'
 	});
 
 Uso avanzado:
 -------
 	$('#region-avanzado').geoRegionalizacion({
    		regionDependiente: '#comuna-avanzado',
+   		regionDependiente: '#comuna-avanzado',
+      	onRegionSelect: function(){
+      		console.log($(this).val());
+   		},
+   		onComunaSelect: function() {
+      		console.log($(this).val());
+   		},
    		onCreate: function(){
       		$('#region-avanzado, #comuna-avanzado').selectric('refresh');
    		}

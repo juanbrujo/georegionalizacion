@@ -20,13 +20,7 @@
 		<pre>
 			<code>
 $('#region').geoRegionalizacion({
-   regionDependiente: '#comuna',
-   onRegionSelect: function(){
-      console.log($(this).val());
-   },
-   onComunaSelect: function() {
-      console.log($(this).val());
-   }
+   regionDependiente: '#comuna'
 });
 			</code>
 		</pre>
@@ -49,6 +43,12 @@ $('#region').geoRegionalizacion({
 			<code>
 $('#region-avanzado').geoRegionalizacion({
    regionDependiente: '#comuna-avanzado',
+      onRegionSelect: function(){
+      console.log($(this).val());
+   },
+   onComunaSelect: function() {
+      console.log($(this).val());
+   },
    onCreate: function(){
       $('#region-avanzado, #comuna-avanzado').selectric('refresh');
    }
@@ -76,16 +76,16 @@ $('#region-avanzado').geoRegionalizacion({
 	<script>
 
 		$('#region').geoRegionalizacion({
-			regionDependiente: '#comuna',
+			regionDependiente: '#comuna'
+		});
+		$('#region-avanzado').geoRegionalizacion({
+			regionDependiente: '#comuna-avanzado',
 			onRegionSelect: function(){
 				console.log($(this).val());
 			},
 			onComunaSelect: function() {
 				console.log($(this).val());
-			}
-		});
-		$('#region-avanzado').geoRegionalizacion({
-			regionDependiente: '#comuna-avanzado',
+			},
 			onCreate: function(){
 				$('#region-avanzado, #comuna-avanzado').selectric('refresh');
 			}
