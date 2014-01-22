@@ -1,10 +1,12 @@
-geoRegionalizacion
+geoRegionalizacion - Chile
 ==================
 
 Este sencillo plugin permite generar dependencia entre 2 &lt;select&gt; y entre ellos mostrar la relación region / comuna que conforma la distribución geopolítica de la República de Chile.
 
-HTML base:
--------
+###[Demo](http://www.csslab.cl/ejemplos/geoRegionalizacion/demo.html)
+
+###HTML base:
+
 	<label>Región: </label>
 	<select id="region">
 		<option value="">Seleccione</option>
@@ -15,14 +17,14 @@ HTML base:
 	</select>
 
 
-Uso base:
--------
+###Uso base:
+
 	$('#region').geoRegionalizacion({
    		regionDependiente: '#comuna'
 	});
 
-Uso avanzado:
--------
+###Uso avanzado:
+
 	$('#region-avanzado').geoRegionalizacion({
    		regionDependiente: '#comuna-avanzado',
       	onRegionSelect: function(){
