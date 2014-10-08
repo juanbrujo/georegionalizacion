@@ -1,9 +1,14 @@
-geoRegionalizacion - Chile
-==================
+#jQuery GeoRegionalizacion - Chile
 
-Este sencillo plugin permite generar dependencia entre 2 &lt;select&gt; y entre ellos mostrar la relación region / comuna que conforma la distribución geopolítica de la República de Chile.
+![](https://dl.dropboxusercontent.com/u/3522/jquery-georecionalizacion.png)
 
-###[Demo](http://www.csslab.cl/ejemplos/geoRegionalizacion/demo.html)
+Este sencillo plugin permite generar dependencia entre 2 &lt;select&gt; y entre ellos mostrar la relación región/comuna que conforma la distribución geopolítica de la República de Chile.
+
+#####[Demo](http://www.csslab.cl/ejemplos/geoRegionalizacion/demo.html)
+
+###Dependencias:
+
+[jQuery](http://jquery.com/)
 
 ###HTML base:
 
@@ -38,4 +43,5 @@ Este sencillo plugin permite generar dependencia entre 2 &lt;select&gt; y entre 
    		}
 	});
 
-
+###Licencia:
+[MIT](https://github.com/juanbrujo/georegionalizacion/blob/master/LICENSE)

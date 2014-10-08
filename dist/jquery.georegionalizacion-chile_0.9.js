@@ -1,56 +1,45 @@
-/* ----------------------------------
-jQuery geoRegionalizacion
-v0.7
-probado con jQuery v1.6+
-©2014 CSSLab.cl
-instrucciones: https://github.com/juanbrujo/georegionalizacion
-licencia: The MIT License (MIT)
----------------------------------- */
-
-;
-(function($) {
+;(function($) {
 
     $.geoRegionalizacion = function(element, options) {
 
         var defaults = {
-            regionDependiente: '#comuna',
+            regionDependiente: "#comuna",
             onRegionSelect: function() {},
             onComunaSelect: function() {},
             onCreate: function() {}
 
-        }
-        // current instance of the object
+        };
         var plugin = this;
-        plugin.settings = {}
+        plugin.settings = {};
 
         var $element = $(element),
-             element = element;
+             element = $element;
         plugin.init = function() {
             plugin.settings = $.extend({}, defaults, options);
 
             // the plugin working
-            var regiones = Array('RM', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIV', 'XV');
+            var regiones = Array("RM","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIV","XV");
             var i = 0;
             var limite = regiones.length;
             for (i; i < limite; i++) {
                 jQuery("<option value='" + regiones[i] + "'>" + regiones[i] + "</option>").appendTo($element);
             }
 
-            jQuery(plugin.settings.regionDependiente).attr('disabled', 'disabled');
-            var texto = jQuery(plugin.settings.regionDependiente + '>:first').text();
+            jQuery(plugin.settings.regionDependiente).attr("disabled","disabled");
+            var texto = jQuery(plugin.settings.regionDependiente + ">:first").text();
 
             comunasRegion($element.val());
             if ($element.length > 0) {
-                $element.change(function(e) {
-                    jQuery(plugin.settings.regionDependiente).removeAttr('disabled').html("<option value=''>" + texto + "</option>");
+                $element.change(function() {
+                    jQuery(plugin.settings.regionDependiente).removeAttr("disabled").html("<option value=''>" + texto + "</option>");
                     comunasRegion($element.val());
                     plugin.settings.onRegionSelect.call(this);
                 });
-                jQuery(plugin.settings.regionDependiente).change(function(e) {
+                jQuery(plugin.settings.regionDependiente).change(function() {
                     plugin.settings.onComunaSelect.call(this);
                 });
             }
-            function comunasRegion(id_region_seleccionada, id_comuna) {
+            function comunasRegion(id_region_seleccionada) {
                 switch (id_region_seleccionada) {
                     case "I":
                         jQuery("<option value='ALTO HOSPICIO'>ALTO HOSPICIO</option>").appendTo(jQuery(plugin.settings.regionDependiente));
@@ -112,7 +101,7 @@ licencia: The MIT License (MIT)
                         jQuery("<option value='EL QUISCO'>EL QUISCO</option>").appendTo(jQuery(plugin.settings.regionDependiente));
                         jQuery("<option value='EL TABO'>EL TABO</option>").appendTo(jQuery(plugin.settings.regionDependiente));
                         jQuery("<option value='HIJUELAS'>HIJUELAS</option>").appendTo(jQuery(plugin.settings.regionDependiente));
-                        jQuery("<option value='JUAN FERNANDEZ'>JUAN FERNÃNDEZ</option>").appendTo(jQuery(plugin.settings.regionDependiente));
+                        jQuery("<option value='JUAN FERNANDEZ'>JUAN FERNANDEZ</option>").appendTo(jQuery(plugin.settings.regionDependiente));
                         jQuery("<option value='LA CALERA'>LA CALERA</option>").appendTo(jQuery(plugin.settings.regionDependiente));
                         jQuery("<option value='LA CRUZ'>LA CRUZ</option>").appendTo(jQuery(plugin.settings.regionDependiente));
                         jQuery("<option value='LA LIGUA'>LA LIGUA</option>").appendTo(jQuery(plugin.settings.regionDependiente));
@@ -429,19 +418,19 @@ licencia: The MIT License (MIT)
                         break;
                     default:
                         jQuery(plugin.settings.regionDependiente).html("<option value=''>" + texto + "</option>");
-                };
+                }
                 plugin.settings.onCreate.call(this);
-            };
-        }
+            }
+        };
         plugin.init();
-    }
+    };
 
     $.fn.geoRegionalizacion = function(options) {
         return this.each(function() {
-            if (undefined == $(this).data('geoRegionalizacion')) {
+            if (undefined === $(this).data("geoRegionalizacion")) {
                 var plugin = new $.geoRegionalizacion(this, options);
-                $(this).data('geoRegionalizacion', plugin);
+                $(this).data("geoRegionalizacion", plugin);
             }
         });
-    }
+    };
 })(jQuery);
