@@ -45,3 +45,12 @@ h1,h2,h3 {
 	border-bottom: 1px solid rgba(255,255,255,.1);
 	color: #fff;
 }
+a {
+	font-size: .8em;
+	font-weight: bold;
+	background-color: white;
+	color: #6e529d;
+	text-shadow: none;
+	text-decoration: none;
+	padding: .2em .4em;
+}
