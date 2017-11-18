@@ -36,14 +36,14 @@ $('#region').geoRegionalizacion({
 ```javascript
 $('#region-avanzado').geoRegionalizacion({
 	regionDependiente: '#comuna-avanzado',
-onRegionSelect: function(){
-	console.log($(this).val());
+	onRegionSelect: function(){
+		console.log($(this).val());
 	},
 	onComunaSelect: function() {
-	console.log($(this).val());
+		console.log($(this).val());
 	},
 	onCreate: function(){
-	$('#region-avanzado, #comuna-avanzado').selectric('refresh');
+		$('#region-avanzado, #comuna-avanzado').selectric('refresh');
 	}
 });
 ```
