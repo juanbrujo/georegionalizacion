@@ -1,47 +1,52 @@
-#jQuery GeoRegionalizacion - Chile
+# jQuery GeoRegionalizacion - Chile
 
-![](https://dl.dropboxusercontent.com/u/3522/jquery-georecionalizacion.png)
+![jQuery GeoRegionalizacion - Chile](https://i.imgur.com/TEYIcSu.png)
 
 Este sencillo plugin permite generar dependencia entre 2 &lt;select&gt; y entre ellos mostrar la relación región/comuna que conforma la distribución geopolítica de la República de Chile.
 
-#####[Demo](http://www.csslab.cl/ejemplos/geoRegionalizacion/demo.html)
+##### [Demo](http://www.csslab.cl/ejemplos/geoRegionalizacion/demo.html)
 
-###Dependencias:
+### Dependencias:
 
 [jQuery](http://jquery.com/)
 
-###HTML base:
+### HTML base:
 
-	<label>Región: </label>
-	<select id="region">
-		<option value="">Seleccione</option>
-	</select>
-	<label>Comuna: </label>
-	<select id="comuna">
-		<option value="">Seleccione</option>
-	</select>
+```html
+<label>Región: </label>
+<select id="region">
+	<option value="">Seleccione</option>
+</select>
+<label>Comuna: </label>
+<select id="comuna">
+	<option value="">Seleccione</option>
+</select>
+```
 
+### Uso base:
 
-###Uso base:
+```javascript
+$('#region').geoRegionalizacion({
+	regionDependiente: '#comuna'
+});
+```
 
-	$('#region').geoRegionalizacion({
-   		regionDependiente: '#comuna'
-	});
+### Uso avanzado:
 
-###Uso avanzado:
+```javascript
+$('#region-avanzado').geoRegionalizacion({
+	regionDependiente: '#comuna-avanzado',
+onRegionSelect: function(){
+	console.log($(this).val());
+	},
+	onComunaSelect: function() {
+	console.log($(this).val());
+	},
+	onCreate: function(){
+	$('#region-avanzado, #comuna-avanzado').selectric('refresh');
+	}
+});
+```
 
-	$('#region-avanzado').geoRegionalizacion({
-   		regionDependiente: '#comuna-avanzado',
-      	onRegionSelect: function(){
-      		console.log($(this).val());
-   		},
-   		onComunaSelect: function() {
-      		console.log($(this).val());
-   		},
-   		onCreate: function(){
-      		$('#region-avanzado, #comuna-avanzado').selectric('refresh');
-   		}
-	});
-
-###Licencia:
+### Licencia:
 [MIT](https://github.com/juanbrujo/georegionalizacion/blob/master/LICENSE)
